@@ -1,10 +1,11 @@
-FROM python:3.9.7-slim-buster
+FROM mysterysd/wzmlx:latest
 
+WORKDIR /usr/src/app
+RUN chmod 777 /usr/src/app
 
-WORKDIR .
-RUN apt -qq update && apt -qq install -y git wget pv jq python3-dev ffmpeg mediainfo
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+
 COPY . .
-RUN pip3 install -r requirements.txt
-RUN apt install ffmpeg
 
 CMD ["python3", "main.py"]
