@@ -30,9 +30,9 @@ from os import environ
 
 bot = Client(
     "bot",
-    bot_token=environ.get('BOT_TOKEN'), 
-    api_id=int(environ.get('API_ID')), 
-    api_hash=environ.get('API_HASH'),
+    bot_token=environ.get('BOT_TOKEN', "6735532167:AAFrKrqCMCT2QlS2p4Za2enW7rDGTLa6iYE"), 
+    api_id=int(environ.get('API_ID', "24781263")), 
+    api_hash=environ.get('API_HASH', "41abdfd49a74666e24113d071db34c9d"),
     workers= 6)
 
 
